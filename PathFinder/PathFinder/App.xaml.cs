@@ -18,7 +18,7 @@ namespace PathFinder
 
 		protected override void OnStart ()
 		{
-            BeaconService.Start();
+            
             // Handle when your app starts
         }
 
