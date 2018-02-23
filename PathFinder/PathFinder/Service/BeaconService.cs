@@ -89,7 +89,12 @@ namespace PathFinder
                             {
                                 var beaconCollection = beaconLocater.GetAvailableBeacons();
                                      
-                                if (beaconCollection != null && beaconCollection.Count() > 0 && Helpers.Settings.SubCategorySettings == "Neuro")
+                                if (beaconCollection != null && beaconCollection.Count() > 0 
+                                &&( 
+                                       Helpers.Settings.SubCategorySettings == "Neuro"
+                                    || Helpers.Settings.SubCategorySettings == "Emergency"
+
+                                ))
                                 {
                                     CrossLocalNotifications.Current.Show("PathFinder", "Wrong Direction"); 
                                     CrossVibrate.Current.Vibration(TimeSpan.FromSeconds(1));
