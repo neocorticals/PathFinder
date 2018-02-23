@@ -88,19 +88,23 @@ namespace PathFinder
                             try
                             {
                                 var beaconCollection = beaconLocater.GetAvailableBeacons();
-                                     
-                                if (beaconCollection != null && beaconCollection.Count() > 0 
-                                &&( 
+
+                                if (beaconCollection != null && beaconCollection.Count() > 0
+                                && (
                                        Helpers.Settings.SubCategorySettings == "Neuro"
                                     || Helpers.Settings.SubCategorySettings == "Emergency"
 
                                 ))
                                 {
-                                    CrossLocalNotifications.Current.Show("PathFinder", "Wrong Direction"); 
+                                    CrossLocalNotifications.Current.Show("PathFinder", "Wrong Direction", 101);
                                     CrossVibrate.Current.Vibration(TimeSpan.FromSeconds(1));
-                                } 
+                                }
                                 else
+                                {
+                                    CrossLocalNotifications.Current.Cancel(101);
                                     CrossVibrate.Current.Vibration(TimeSpan.FromSeconds(0));
+                                }
+                                   
                             }
                             catch (Exception)
                             {
