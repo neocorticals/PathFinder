@@ -4,6 +4,35 @@
              x:Class="PathFinder.Pages.HomePage">
     <ContentPage.Content>
         <StackLayout>
+            <!--<Grid Margin="20" BackgroundColor="LightGray"  >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+
+
+                <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">Category</Label>
+                <Picker Grid.Row="1" Grid.Column="1" x:Name="picker" VerticalOptions="CenterAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Mall</x:String>
+                            <x:String>Hospital</x:String>
+                            <x:String>Hotel</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Grid>-->
+
+
             <Grid Margin="20" BackgroundColor="LightGray"  >
 
                 <Grid.RowDefinitions>
@@ -21,7 +50,7 @@
 
 
                 <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">Category</Label>
-                <Picker Grid.Row="1" Grid.Column="1" x:Name="picker" VerticalOptions="CenterAndExpand" SelectedIndexChanged="PickerList_OnSelectedIndexChanged">
+                <Picker Grid.Row="1" Grid.Column="1" x:Name="picker" VerticalOptions="CenterAndExpand">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Mall</x:String>
@@ -31,8 +60,6 @@
                     </Picker.ItemsSource>
                 </Picker>
             </Grid>
-
-
 
 
 
