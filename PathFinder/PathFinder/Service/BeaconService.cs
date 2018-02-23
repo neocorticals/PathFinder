@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading;
 using PathFinder.Abstractions;
 using Plugin.LocalNotifications;
+using Plugin.Vibrate;
 
 namespace PathFinder
 {
@@ -90,6 +91,7 @@ namespace PathFinder
                                 if (beaconCollection != null && beaconCollection.Count() > 0)
                                 {
                                     CrossLocalNotifications.Current.Show("PathFinder", "Wrong Direction");
+                                    CrossVibrate.Current.Vibration(TimeSpan.FromSeconds(1));
                                 } 
                             }
                             catch (Exception)
