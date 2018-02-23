@@ -2,10 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xam.Plugins.Notifier" Version="2.1.0" NoWarn="NU1701" /> 
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PathFinder.Abstractions\PathFinder.Abstractions.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,4 +22,6 @@
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
+
+  <Import Project="..\PathFinder.Shared\PathFinder.Shared.projitems" Label="Shared" />
 </Project>

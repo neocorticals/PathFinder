@@ -13,13 +13,14 @@ namespace PathFinder
 		{
 			InitializeComponent();
 
-			MainPage = new PathFinder.MainPage();
+			MainPage = new NavigationPage(new PathFinder.MainPage());
 		}
 
 		protected override void OnStart ()
 		{
-			// Handle when your app starts
-		}
+            BeaconService.Start();
+            // Handle when your app starts
+        }
 
 		protected override void OnSleep ()
 		{
