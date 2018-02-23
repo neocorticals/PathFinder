@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathFinder.Droid", "PathFinder\PathFinder.Android\PathFinder.Droid.csproj", "{CB848F4C-31E9-4D7D-9884-AEAABE6C0378}"
 EndProject
@@ -189,6 +189,7 @@ Global
 		{14A5B470-3ADD-4030-85D0-783D82301802}.AppStore|x86.Build.0 = Release|x86
 		{14A5B470-3ADD-4030-85D0-783D82301802}.AppStore|x86.Deploy.0 = Release|x86
 		{14A5B470-3ADD-4030-85D0-783D82301802}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{14A5B470-3ADD-4030-85D0-783D82301802}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{14A5B470-3ADD-4030-85D0-783D82301802}.Debug|ARM.ActiveCfg = Debug|ARM
 		{14A5B470-3ADD-4030-85D0-783D82301802}.Debug|ARM.Build.0 = Debug|ARM
 		{14A5B470-3ADD-4030-85D0-783D82301802}.Debug|ARM.Deploy.0 = Debug|ARM
