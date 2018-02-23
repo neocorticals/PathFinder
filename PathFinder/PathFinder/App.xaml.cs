@@ -13,7 +13,7 @@ namespace PathFinder
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new PathFinder.MainPage());
+			MainPage = new NavigationPage(new PathFinder.Pages.HomePage());
 		}
 
 		protected override void OnStart ()

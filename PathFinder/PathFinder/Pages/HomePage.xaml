@@ -38,6 +38,8 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
 
                 </Grid.RowDefinitions>
 
@@ -50,7 +52,7 @@
 
 
                 <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">Category</Label>
-                <Picker Grid.Row="1" Grid.Column="1" x:Name="picker" VerticalOptions="CenterAndExpand">
+                <Picker Grid.Row="1" Grid.Column="1" x:Name="category" VerticalOptions="CenterAndExpand" SelectedIndexChanged="PickerList_OnSelectedIndexChanged">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Mall</x:String>
@@ -58,6 +60,12 @@
                             <x:String>Hotel</x:String>
                         </x:Array>
                     </Picker.ItemsSource>
+                </Picker>
+
+
+                <Label Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">Sub Category</Label>
+                <Picker Grid.Row="3" Grid.Column="1" x:Name="subCategory" VerticalOptions="CenterAndExpand" SelectedIndexChanged="subCategory_OnSelectedIndexChanged">
+                    
                 </Picker>
             </Grid>
 
