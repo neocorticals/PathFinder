@@ -1,12 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PathFinder.Pages.Navigator">
+<ContentPage
+    x:Class="PathFinder.Pages.Navigator"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+            <Label x:Name="lblCategory" HorizontalOptions="StartAndExpand" />
+            <Label x:Name="lblSubCategory" HorizontalOptions="StartAndExpand" />
+            <ffimageloading:CachedImage
+                DownsampleToViewSize="true"
+                HeightRequest="300"
+                Source="hospitalMap.png"
+                WidthRequest="300" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

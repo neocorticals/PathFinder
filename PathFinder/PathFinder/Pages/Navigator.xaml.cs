@@ -15,6 +15,10 @@ namespace PathFinder.Pages
 		public Navigator ()
 		{
 			InitializeComponent ();
-		}
+
+            lblCategory.Text = Helpers.Settings.CategorySettings;
+            lblSubCategory.Text = Helpers.Settings.SubCategorySettings;
+
+        }
 	}
 }

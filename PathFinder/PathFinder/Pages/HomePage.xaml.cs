@@ -60,8 +60,8 @@ namespace PathFinder.Pages
 
         private void subCategory_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            Helpers.Settings.SubCategorySettings = subCategory.SelectedItem.ToString();
-
+            Helpers.Settings.SubCategorySettings = subCategory.SelectedItem.ToString(); 
+            this.Navigation.PushModalAsync(new Navigator()); 
         }
     }
 }

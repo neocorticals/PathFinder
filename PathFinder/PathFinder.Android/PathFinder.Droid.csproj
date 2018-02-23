@@ -117,6 +117,9 @@
       <Name>PathFinder</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\hospitalMap.png" />
+  </ItemGroup>
   <Import Project="..\PathFinder.Shared\PathFinder.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
