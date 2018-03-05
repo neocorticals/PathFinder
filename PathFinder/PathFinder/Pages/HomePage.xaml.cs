@@ -25,9 +25,12 @@ namespace PathFinder.Pages
             ,{ "I.C.U", "Hospital" }
             ,{ "Operation Theatre", "Hospital"}
 
-            ,{ "Server Room", "DMI Pune" }
-            ,{ "Conference Room TV", "DMI Pune" }
-            ,{ "Conference Room Projector", "DMI Pune" }
+            ,{ "ANTARES", "DMI Pune" }
+            ,{ "CANOPUS", "DMI Pune" }
+            ,{ "POLLUX", "DMI Pune" }
+            ,{ "CAPELLA", "DMI Pune" }
+            ,{ "RIGEL", "DMI Pune" }
+            ,{ "FRESH BREW", "DMI Pune" }
 
         }; 
 
@@ -38,6 +41,8 @@ namespace PathFinder.Pages
 
         private void PickerList_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+            subCategory.Items.Clear();
+
             var filtered_SubCategories = SubCategory.Where(x => x.Value == category.SelectedItem.ToString()).Select(g => g.Key).ToList();
 
             if (filtered_SubCategories.Count == 0)
@@ -46,9 +51,9 @@ namespace PathFinder.Pages
             }
             else
             {
-                //subCategory.Items.Clear();
                 foreach (string item in filtered_SubCategories)
                 {
+
                     subCategory.Items.Add(item);
                 }
             }
@@ -58,9 +63,12 @@ namespace PathFinder.Pages
 
         private void subCategory_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            Helpers.Settings.SubCategorySettings = subCategory.SelectedItem.ToString();
-            BeaconService.Start();
-            this.Navigation.PushModalAsync(new Navigator());
+            if (subCategory.Items.Count > 0)
+            {
+                Helpers.Settings.SubCategorySettings = subCategory.SelectedItem.ToString();
+                BeaconService.Start();
+                this.Navigation.PushModalAsync(new Navigator());
+            }
         }
     }
 }
