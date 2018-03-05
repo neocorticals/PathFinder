@@ -11,10 +11,10 @@ namespace PathFinder
 	{
 		public App ()
 		{
-			InitializeComponent();
-
+			InitializeComponent(); 
 			MainPage = new NavigationPage(new PathFinder.Pages.HomePage());
-		}
+            this.BindingContext = new BaseViewModel();
+        }
 
 		protected override void OnStart ()
 		{

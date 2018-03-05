@@ -11,7 +11,7 @@
             <ffimageloading:CachedImage
                 DownsampleToViewSize="true"
                 HeightRequest="300"
-                Source="hospitalMap.png"
+                Source="{Binding ImageName}"
                 WidthRequest="300" />
         </StackLayout>
     </ContentPage.Content>

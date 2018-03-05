@@ -15,12 +15,9 @@ namespace PathFinder
     {
         static IEnumerable<object> beaconCollection;
         static IBeaconLocater beaconLocater;
-        static TimerHolder startTimer;
-        static string previousStationName = "";
-        static DateTime datetime45;
-        public static bool IsBusy { get; set; }
-         
-
+        static TimerHolder startTimer; 
+        public static bool IsBusy { get; set; } 
+        public static string LastLocation { get; set; }
         public static void Start()
         {
             IsBusy = false;
@@ -83,11 +80,13 @@ namespace PathFinder
                     if (status == PermissionStatus.Granted)
                     {
                         startTimer?.Stop();
-                        startTimer = new TimerHolder(5000, async () =>
+                        startTimer = new TimerHolder(1000,() =>
                         {
                             try
                             {
                                 var beaconCollection = beaconLocater.GetAvailableBeacons();
+                                var _BaseViewModel = Application.Current.MainPage.BindingContext as BaseViewModel;
+
 
                                 if (beaconCollection != null && beaconCollection.Count() > 0
                                 && (
@@ -96,11 +95,62 @@ namespace PathFinder
 
                                 ))
                                 {
+
+                                   // _BaseViewModel.ImageName = "hospitalMap.png";
+                                    
+                                    var closestBeacon = ((List<BeaconItem>)beaconCollection).OrderBy(b => b.CurrentDistance).First();
                                     CrossLocalNotifications.Current.Show("PathFinder", "Wrong Direction", 101);
                                     CrossVibrate.Current.Vibration(TimeSpan.FromSeconds(1));
                                 }
+                               else if (beaconCollection != null && beaconCollection.Count() > 0)
+                                {
+                                  
+
+                                    var closestBeacon = ((List<BeaconItem>)beaconCollection).OrderBy(b => b.CurrentDistance).First();
+                                    if (closestBeacon != null)
+                                    {
+                                        switch (closestBeacon.Minor)
+                                        {
+                                            case "10":
+                                               
+                                                if (LastLocation != "10")
+                                                {
+                                                    CrossLocalNotifications.Current.Show("PathFinder", "You are at conference room projector", 101);
+
+                                                    Helpers.Settings.CurrentLocation = "projector";
+                                                    _BaseViewModel.ImageName = "pj.png";
+                                                }
+                                                LastLocation = "10";
+                                                break;
+                                            case "15":
+                                               
+                                                if (LastLocation != "15")
+                                                {
+                                                    CrossLocalNotifications.Current.Show("PathFinder", "You are at conference room tv", 101);
+
+                                                    Helpers.Settings.CurrentLocation = "tv";
+                                                    _BaseViewModel.ImageName = "tv.png";
+                                                }
+                                                LastLocation = "15";
+                                                break;
+                                            case "20":
+                                               
+                                                if (LastLocation != "20")
+                                                {
+                                                    CrossLocalNotifications.Current.Show("PathFinder", "You are at server room", 101);
+
+                                                    Helpers.Settings.CurrentLocation = "server";
+                                                    _BaseViewModel.ImageName = "sr.png";
+                                                }
+                                                LastLocation = "20";
+                                                break;
+                                        }
+                                    } 
+                                   // CrossVibrate.Current.Vibration(TimeSpan.FromSeconds(1));
+                                }
                                 else
                                 {
+                                   // _BaseViewModel.ImageName = "hospitalMap.png";
                                     CrossLocalNotifications.Current.Cancel(101);
                                     CrossVibrate.Current.Vibration(TimeSpan.FromSeconds(0));
                                 }

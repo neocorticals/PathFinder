@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PathFinder.Pages.HomePage">
+<ContentPage
+    x:Class="PathFinder.Pages.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <StackLayout>
             <!--<Grid Margin="20" BackgroundColor="LightGray"  >
@@ -33,40 +34,60 @@
             </Grid>-->
 
 
-            <Grid Margin="20" BackgroundColor="LightGray"  >
+            <Grid Margin="20" BackgroundColor="LightGray">
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
 
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
 
                 </Grid.ColumnDefinitions>
 
 
-                <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">Category</Label>
-                <Picker Grid.Row="1" Grid.Column="1" x:Name="category" VerticalOptions="CenterAndExpand" SelectedIndexChanged="PickerList_OnSelectedIndexChanged">
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center">
+                    Category
+                </Label>
+                <Picker
+                    x:Name="category"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    SelectedIndexChanged="PickerList_OnSelectedIndexChanged"
+                    VerticalOptions="CenterAndExpand">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Mall</x:String>
                             <x:String>Hospital</x:String>
-                            <x:String>Hotel</x:String>
+                            <x:String>DMI Pune</x:String>
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
 
 
-                <Label Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">Sub Category</Label>
-                <Picker Grid.Row="3" Grid.Column="1" x:Name="subCategory" VerticalOptions="CenterAndExpand" SelectedIndexChanged="subCategory_OnSelectedIndexChanged">
-                    
-                </Picker>
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center">
+                    Sub Category
+                </Label>
+                <Picker
+                    x:Name="subCategory"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    SelectedIndexChanged="subCategory_OnSelectedIndexChanged"
+                    VerticalOptions="CenterAndExpand" />
             </Grid>
 
 

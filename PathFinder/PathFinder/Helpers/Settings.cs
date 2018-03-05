@@ -29,5 +29,13 @@ namespace PathFinder.Helpers
 
             set => AppSettings.AddOrUpdateValue(nameof(SubCategorySettings), value);
         }
+
+
+        public static string CurrentLocation
+        {
+            get => AppSettings.GetValueOrDefault(nameof(CurrentLocation), string.Empty);
+
+            set => AppSettings.AddOrUpdateValue(nameof(CurrentLocation), value);
+        }
     }
 }

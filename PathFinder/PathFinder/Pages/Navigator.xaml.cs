@@ -17,8 +17,7 @@ namespace PathFinder.Pages
 			InitializeComponent ();
 
             lblCategory.Text = Helpers.Settings.CategorySettings;
-            lblSubCategory.Text = Helpers.Settings.SubCategorySettings;
-
+            lblSubCategory.Text = Helpers.Settings.SubCategorySettings; 
         }
 	}
 }

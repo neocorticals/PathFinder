@@ -61,48 +61,11 @@ namespace PathFinder.Droid
         public void ResumeTracking()
         {
             paused = false;
-        }
-
-        void RangingBeaconsInRegion1(object sender, RangeEventArgs e)
-        {
-            var listbcon = (List<IBeacon>)e.Beacons;
-            if (listbcon.Count > 0)
-            {
-                foreach (var b in e.Beacons)
-                {
-                    if ((ProximityType)b.Proximity != ProximityType.Unknown)
-                    { 
-                        var exists = false; 
-
-                        for (int i = 0; i < beacons.Count; i++)
-                        {
-                            if (beacons[i].Minor.Equals(b.Minor.ToString()))
-                            {
-                                beacons[i].CurrentDistance = Math.Round(b.Accuracy, 2);
-                                SetProximity(b, beacons[i]);
-                                exists = true;
-                            }
-                        }
-
-                        if (!exists)
-                        {
-                            var newBeacon = new BeaconItem
-                            {
-                                Minor = b.Minor.ToString(),
-                                Name = "",
-                                CurrentDistance = Math.Round(b.Accuracy, 2)
-                            };
-                            SetProximity(b, newBeacon);
-                            beacons.Add(newBeacon);
-                        }
-                    }
-                }
-            }
-        }
-
+        } 
 
         void RangingBeaconsInRegion(object sender, RangeEventArgs e)
         {
+            beacons = new List<BeaconItem>();
             if (e.Beacons.Count > 0)
             {
                 foreach (var b in e.Beacons)

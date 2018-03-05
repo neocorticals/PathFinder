@@ -14,27 +14,27 @@ namespace PathFinder.Pages
     {
         Dictionary<string, string> SubCategory = new Dictionary<string, string>
         {
-            { "OPD", "Hospital" }, { "Casualty", "Hospital" },
-            { "Emergency", "Hospital" }, { "Cardiologist", "Hospital" },
-            { "Ortho", "Hospital" }, { "Neuro", "Hospital" },
-            { "Reception", "Hospital" }, { "Enquiry", "Hospital" },
-            { "I.C.U", "Hospital" }, { "Operation Theatre", "Hospital" },
-       { "Reception Counter", "Hotel" }, { "Food Court", "Hotel" }
-        };
+             { "OPD", "Hospital" }
+            ,{ "Casualty", "Hospital" }
+            ,{ "Emergency", "Hospital" }
+            ,{ "Cardiologist", "Hospital" }
+            ,{ "Ortho", "Hospital" }
+            ,{ "Neuro", "Hospital" }
+            ,{ "Reception", "Hospital" }
+            ,{ "Enquiry", "Hospital" }
+            ,{ "I.C.U", "Hospital" }
+            ,{ "Operation Theatre", "Hospital"}
 
+            ,{ "Server Room", "DMI Pune" }
+            ,{ "Conference Room TV", "DMI Pune" }
+            ,{ "Conference Room Projector", "DMI Pune" }
 
+        }; 
 
         public HomePage()
         {
-            InitializeComponent();
-
-            //category.SelectedIndexChanged += Category_SelectedIndexChanged;
-        }
-
-        //private void Category_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    throw new NotImplementedException();
-        //}
+            InitializeComponent(); 
+        } 
 
         private void PickerList_OnSelectedIndexChanged(object sender, EventArgs e)
         {
@@ -46,20 +46,18 @@ namespace PathFinder.Pages
             }
             else
             {
+                //subCategory.Items.Clear();
                 foreach (string item in filtered_SubCategories)
                 {
                     subCategory.Items.Add(item);
                 }
             }
 
-            Helpers.Settings.CategorySettings = category.SelectedItem.ToString();
-
-            //subCategory.ItemsSource = SubCategory.Keys;
-            //PickerLabel.Text = PickerList.Items[PickerList.SelectedIndex];
+            Helpers.Settings.CategorySettings = category.SelectedItem.ToString(); 
         }
 
         private void subCategory_OnSelectedIndexChanged(object sender, EventArgs e)
-        { 
+        {
             Helpers.Settings.SubCategorySettings = subCategory.SelectedItem.ToString();
             BeaconService.Start();
             this.Navigation.PushModalAsync(new Navigator());
