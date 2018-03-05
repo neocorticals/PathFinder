@@ -5,10 +5,6 @@
 Components
 [Pp]ackages
 *.userprefs
-**/DMI.XIP/DMI.XIP/DMI.XIP.Forms/DMI.XIP.Forms.nuget.targets
-**/DMI.XIP/DMI.XIP/DMI.XIP.Forms/project.lock.json
-**/DMI.XIP/DMI.XIP/DMI.XIP.UWP/DMI.XIP.UWP.nuget.props
-**/DMI.XIP/DMI.XIP/DMI.XIP.UWP/project.lock.json
 
 *.targets
 
@@ -281,4 +277,3 @@ __pycache__/
 
 
 *.bak
-/DMI.XIP.Web/wwwroot
