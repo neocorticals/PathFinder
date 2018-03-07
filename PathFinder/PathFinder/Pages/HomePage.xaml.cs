@@ -25,8 +25,8 @@ namespace PathFinder.Pages
             ,{ "I.C.U", "Hospital" }
             ,{ "Operation Theatre", "Hospital"}
 
-            ,{ "ANTARES", "DMI Pune" }
-            ,{ "CANOPUS", "DMI Pune" }
+            ,{ "ANTARES (Conference room)", "DMI Pune" }
+            ,{ "CANOPUS (Conference room)", "DMI Pune" }
             ,{ "POLLUX", "DMI Pune" }
             ,{ "CAPELLA", "DMI Pune" }
             ,{ "RIGEL", "DMI Pune" }

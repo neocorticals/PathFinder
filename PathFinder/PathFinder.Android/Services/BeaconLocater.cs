@@ -65,7 +65,7 @@ namespace PathFinder.Droid
 
         void RangingBeaconsInRegion(object sender, RangeEventArgs e)
         {
-            beacons = new List<BeaconItem>();
+           // beacons = new List<BeaconItem>();
             if (e.Beacons.Count > 0)
             {
                 foreach (var b in e.Beacons)
